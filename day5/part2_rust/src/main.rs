@@ -54,7 +54,7 @@ fn main() {
     println!("{:?}", seeds);
 
     for mut i in 0.. {
-        // println!("{}", i); Add to reveal the secrets of the universe
+        let old_i = i;
         for j in map_vec.iter().rev() {
             let mut matched = false;
             for k in j.iter() {
@@ -71,6 +71,7 @@ fn main() {
         }
         for j in (0..seeds.len()).step_by(2) {
             if i >= seeds[j] && i <= seeds[j] + seeds[j + 1] {
+                println!("{}", old_i);
                 println!("{}", i);
                 return;
             }
